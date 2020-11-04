@@ -5,7 +5,7 @@
  <html>
      <head>
          <title>Dashboard</title>
-         <link rel="stylesheet" href="../css/style.css" type="text/css">
+         <link rel="stylesheet" href="asset/css/style.css" type="text/css">
          <script src="https://kit.fontawesome.com/43978b739a.js" crossorigin="anonymous"></script>
      </head>
 

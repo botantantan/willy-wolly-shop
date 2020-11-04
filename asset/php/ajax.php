@@ -1,4 +1,5 @@
 <?php
+include "../../utils/auth.php";
 session_start();
 switch ($_POST['req']) {
   // (A) INVALID REQUEST
@@ -63,6 +64,14 @@ switch ($_POST['req']) {
         "name" => $user['username'],
         "email" => $user['email']
       ];
+      $email = $_POST["email"];
+      $query = "select * from accounts where email = '$email'";
+      include "connection.php";
+      $conn = OpenCon();
+      $hasil = ($conn->query($query))->fetch_assoc();
+      // var_dump($hasil);
+      set_all_cook($hasil["id"], $hasil["username"], $hasil["email"], $hasil["role"]);
+      // setcookie("id", $hasil["id"], time() + 3600, '/');
       echo json_encode([
         "status" => 1,
         "msg" => "OK"
