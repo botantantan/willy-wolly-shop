@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/43978b739a.js" crossorigin="anonymous"></script>
+    <link href="asset/css/addStock.css" rel="stylesheet"/>
+    <title>Add Stock</title>
+  </head>
+  <body>
+
+    <div class="header">
+      <a href="#" class="left1">Home</a>
+      <a href="#" class="left2">Add New Chocolate</a>
+      <form class="search" action="index.html" method="post">
+        <input class="search-box" type="text" placeholder="Search....." name="" value="">
+      </form>
+      <a href="#" class="right">Logout</a>
+    </div>
+
+    <div class="stock-container">
+      <div class="stock">
+        <div class="stock-choco">
+          <h2>Buy Chocolate <br><br></h2>
+          <img src="" alt="Chocolate Image">
+        </div>
+        <div class="choco-details">
+          <div>
+            <h2>Choco Name: <span> </span></h2>
+            <h2>Amount sold: <span></span></h2>
+            <h2>Amount remaining: <span></span></h2>
+            <div class="choco-desc">
+              <h2>Description</h2>
+              <p>Coklat ini lalalallalalalalallalalallalalalalallalalallalalalalal
+              lalalallalalalalallalalallalalalalallalalallalalalalallalalallalalalalallalalallalalalalallalalallalalalalal
+              lalalallalalalalallalalallalalalalallalalallalalalalallalalallalalalalal</p>
+            </div>
+          </div>
+          <div class="amount">
+            <div class="amount-to-buy">
+              <div class="to-buy">
+                <h2>Amount to add: </h2>
+                <div class="input-amount" id="input-amount">
+                  <button type="button" name="button"><i class="fas fa-minus-circle" id="minus" onclick="minus()"></i></button>
+                  <input type="text" value="1" id="count">
+                  <button type="button" name="button"><i class="fas fa-plus-circle" id="plus" onclick="plus()"></i></button>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="execute">
+      <a href="#" id="cancel">Cancel</a>
+      <a href="#" id="proceed">Buy</a>
+      <!-- <button type="button" name="cancel">Cancel</button>
+      <button type="button" name="buy">Buy</button> -->
+    </div>
+  </body>
+</html>

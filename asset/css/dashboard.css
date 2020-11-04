@@ -1,0 +1,208 @@
+@charset "utf-8";
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold");
+
+/* common
+----------------------------------------------------------------------------- */
+body{
+	font-size: 12px;
+	font-family: 'Open Sans', arial, tahoma, sans-serif;
+	background:url(../images/bg.png) repeat 0 0 fixed;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+label, input, button, select, textarea{
+	font-size: 12px;
+}
+ul li a,a{
+	color:#333;
+	outline:0;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+a{
+	color:#555555;
+}
+a:hover{
+	color: salmon;
+	text-decoration:none;
+}
+
+.box{
+  border: solid;
+  border-width: 5px;
+}
+
+/* header
+----------------------------------------------------------------------------- */
+
+.header {
+  display: grid;
+  grid-template-areas: "left1 left2 search right";
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  flex-direction: auto;
+  padding: 14px 20px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  float: inherit;
+  font-size: 1.5rem;
+  background-color: salmon;
+}
+
+
+.header .left1{
+  grid-area: left1;
+  /* float: left; */
+  /* margin-right: 20px; */
+  /* background-color: blue; */
+}
+
+.header .left2{
+  grid-area: left2;
+  /* float: left; */
+  /* margin-right: 20px; */
+  /* background-color: blue; */
+}
+
+.header .search{
+  grid-area: search;
+  /* background-color: red; */
+  transition: width 0.4s ease-in-out;
+}
+
+.header .search-box{
+  width: 40%;
+  height: 1.5rem;
+  margin: 2%;
+  transition: width 0.4s ease-in-out;
+}
+.search input[type=text]:focus {
+  width: 80%;
+}
+.header .right{
+  grid-area: right;
+  /* float: right; */
+  /* background-color: black; */
+
+}
+
+.section2 {
+  display: grid;
+  grid-template-areas: "left right";
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.section2 a{
+  grid-area: right;
+  float: right;
+  justify-self: end;
+  margin-right: 5%;
+  /* background-color: black; */
+}
+
+.section2 p{
+  grid-area: left;
+  float: left;
+  margin-left: 5%;
+  /* background-color: blue; */
+}
+
+/* end of haeder
+----------------------------------------------------------------------------- */
+
+
+.item{
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+
+
+.section2 {
+  font-size: 1.2rem;
+}
+
+.main-content h4{
+  font-size: 2rem;
+}
+
+
+
+/* product box
+----------------------------------------------------------------------------- */
+.product-box{
+	text-align:center;
+	padding-bottom:15px;
+	position: relative;
+	background-color:#f8f8f8;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-bottom:1px solid #eee;
+  margin: 1.5%;
+  width: 16%;
+  height: 270px;
+}
+.product-box span.sale_tag {
+	background: url(../images/sprites.png) no-repeat scroll 0 0 transparent;
+	height: 54px;
+	position: absolute;
+	width: 55px;
+	z-index: 100;
+	top:0;
+	left:0;
+}
+.product-box:hover{
+	background-color:grey;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+	box-shadow: 0px 0px 5px #ccc;
+}
+.product-box:hover a{
+	color:#fff !important;
+}
+.product-box img{
+	overflow:hidden;
+}
+.product-box a.title{
+	text-transform:uppercase;
+	color:#111111;
+	display:inline-block;
+	font-weight:bold;
+	font-size:11px;
+	margin:15px 0 0px 0;
+}
+.product-box a.category{
+	color:#eb4800;
+}
+.product-box p.price{
+	font-size:20px;
+	font-weight:300;
+	/* padding:10px 0; */
+}
+/* end product box */
+
+/* Responsive
+----------------------------------------------------------------------------- */
+@media (max-width: 767px){
+	#top-bar input{
+		*padding-right:0 !important;
+	}
+	.product-box{
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.product-box:hover{
+		background-color:#f8f8f8;
+	}
+	.product-box:hover a{
+		color:#333 !important;
+	}
+}

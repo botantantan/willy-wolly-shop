@@ -1,0 +1,49 @@
+<?php
+// (A) REDIRECT USER IF ALREADY SIGNED IN
+session_start();
+if (isset($_SESSION['user'])) {
+	header("Location: index.php");
+	die();
+}
+
+// (B) OUTPUT HTML ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="asset/css/history.css">
+    <title>History</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" class="left1">Home</a>
+      <a href="#" class="left2">History</a>
+      <form class="search" action="index.html" method="post">
+        <input class="search-box" type="text" placeholder="Search....." name="" value="">
+      </form>
+      <a href="#" class="right">Logout</a>
+    </div>
+
+    <div class="transaction">
+      <h2>Transaction History</h2>
+      <table>
+        <tr>
+          <th>Chocolate Name</th>
+          <th>Amount</th>
+          <th>Total Price</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Address</th>
+        </tr>
+        <tr>
+          <td>Choco Name 1</td>
+          <td>7</td>
+          <td>Rp21.000,00</td>
+          <td>7 Oktober 2020</td>
+          <td>09:20:21</td>
+          <td>Indonesia</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

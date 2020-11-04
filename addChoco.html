@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="asset/css/addChoco.css" rel="stylesheet"/>
+    <title>Add Choco</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" class="left1">Home</a>
+      <a href="#" class="left2">Add New Chocolate</a>
+      <form class="search" action="index.html" method="post">
+        <input class="search-box" type="text" placeholder="Search....." name="" value="">
+        <a href="#"><i class="fas fa-search"></i></a>
+      </form>
+      <a href="#" class="right">Logout</a>
+    </div>
+
+    <div class="add">
+      <div class="add-container">
+        <form action="asset/php/action_page.php">
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Name </label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="name" name="firstname" placeholder="Chocolate name..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Price</label>
+            </div>
+            <div class="col-75 price">
+              Rp<input type="text" id="price" name="price" placeholder="xxx.xxx">,00
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="country">Description</label>
+            </div>
+            <div class="col-75">
+              <form class="" action="index.html" method="post">
+                <textarea name="desc" name="desc" placeholder="Write something.." ></textarea>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="image">Image</label>
+            </div>
+            <div class="col-75">
+              <input type="file" id="chocoImg" name="chocoImg">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="amount">Amount</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="amount" name="amount" placeholder="">
+            </div>
+          </div>
+          <div class="row submit">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
