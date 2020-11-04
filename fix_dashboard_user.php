@@ -28,7 +28,7 @@
              </div>
 	        </nav>
           <?php
-            $id_user = $_COOKIE["cookie_id_user"];
+            $id_user = $_COOKIE["id"];
             // $id_user = 1;
             $sqlNama = "SELECT * from accounts where id = $id_user";
             $hasilNama = ($conn -> query($sqlNama))->fetch_assoc();

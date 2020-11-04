@@ -1,10 +1,23 @@
 <?php
 // (A) REDIRECT USER IF ALREADY SIGNED IN
-session_start();
-if (isset($_SESSION['user'])) {
-	header("Location: new_dashboard_user.html");
-	die();
+// session_start();
+// if (isset($_SESSION['user'])) {
+// 	header("Location: new_dashboard_user.html");
+// 	die();
+// }
+if (isset($_COOKIE["id"])){
+	if ($_COOKIE["role"]==0){
+		header("Location: asset/php/new_dashboard_user.php");
+	}else{
+		header("Location: asset/php/new_dashboard_superuser.php");
+	}
 }
+include_once "utils/auth.php";
+
+// if (isCookieSet()){
+// 	header('location: fix_dashboard_user.php');
+// 	return;
+// } 
 
 // (B) OUTPUT HTML ?>
 <!DOCTYPE html>

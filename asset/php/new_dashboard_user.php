@@ -24,7 +24,7 @@
                      </div>
                  </div>
                  <div class="navtop-right">
-                     <a href="logout.php" onclick="logout();"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                     <a href="logout.php" ><i class="fas fa-sign-out-alt"></i>Logout</a>
                  </div>
              </div>
            </nav>
