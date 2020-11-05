@@ -419,7 +419,7 @@ body {
 	border-bottom:1px solid #eee;
 	margin: 1.5%;
 	width: 16%;
-	height: 270px;
+	height: 400px;
 }
 .product-box:hover{
 	background-color: grey;
@@ -434,7 +434,12 @@ body {
 	color:#fff !important;
 }
 .product-box img{
-	overflow:hidden;
+	/* overflow:hidden; */
+	/* display:block; */
+  border-radius: 5px;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
 }
 .product-box a.product-name{
 	text-transform:uppercase;
