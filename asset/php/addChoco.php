@@ -1,7 +1,7 @@
 <?php
   include "connection.php";
   $conn = OpenCon();
-  echo "berhasil connect ";
+  // echo "berhasil connect ";
   // id
   // name
   // price
@@ -11,20 +11,21 @@
   // sold
   // $stmt = $con->prepare("INSERT INTO chocolate(name,price,desc,chocoImg,amount) VALUES (?, ?, ?, ?, ?)");
   $stmt = $conn->prepare("INSERT INTO chocolate VALUES (NULL, ?, ?, ?, ?, ?, 0)");
-  echo "berhasil prepare ";
+  // echo "berhasil prepare ";
   // $_POST[""]
-  $stmt->bind_param("sissi", $_POST["name"], $_POST["price"], $_POST["desc"], $_POST["chocoImg"], $_POST["amount"]);
+  $pathImg = "../img/".$_POST["chocoImg"];
+  $stmt->bind_param("sissi", $_POST["name"], $_POST["price"], $_POST["desc"], $pathImg, $_POST["amount"]);
 
   // echo "$_POST['name']";
   // echo "$_POST['price']";
   // echo "$_POST['amount']";
 
-  echo $_POST['name'];
-  echo " ";
-  echo $_POST['price'];
-  echo " ";
-  echo $_POST['amount'];
-  echo " ";
+  // echo $_POST['name'];
+  // echo " ";
+  // echo $_POST['price'];
+  // echo " ";
+  // echo $_POST['amount'];
+  // echo " ";
 
   if(empty($_POST["name"]) || empty($_POST["price"]) || empty($_POST["amount"])){
     exit('Please complete the form');
@@ -44,9 +45,11 @@
   // $conn->query($sql);
   $stmt->execute();
   $stmt->close();
-  echo "berhasil execute";
+  $query = "SELECT * FROM chocolate ORDER BY id DESC LIMIT 1";
+  $hasil = ($conn -> query($query))->fetch_assoc();
+
+
+  header("Location: add_stock_superuser.php?id=".$hasil["id"]."&status=chocoAdded");
   CloseCon($conn);
-
-
 
  ?>

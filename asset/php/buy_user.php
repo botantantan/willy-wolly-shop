@@ -30,7 +30,7 @@
 		</nav>
 
         <?php
-            $id_user = $_COOKIE["cookie_id_user"];
+            $id_user = $_COOKIE["id"];
             $id_product = $_GET["id"];
             $sqlProducts = "SELECT * FROM chocolate WHERE id=$id_product";
             $hasilProducts = $conn -> query($sqlProducts);
@@ -38,7 +38,7 @@
         ?>
 
         <div class="content">
-			<h2>Add  Stock</h2>
+			<h2>Buy Chocolate</h2>
             <div>
                 <div class="content-product">
                     <div class="item">
@@ -108,7 +108,7 @@
                                         <div class="column">
                                             <br>
                                             <p>
-                                              <button type="button" class="btn bl"  onclick="addStock()"  id="buy-now">
+                                              <button type="button" class="btn bl"  onclick="buyNow()"  id="buy-now">
                                                   <span class="btn-text">BUY NOW</span>
                                               </button>
                                             </p>

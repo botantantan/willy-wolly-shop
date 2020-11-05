@@ -31,7 +31,7 @@ function isCookieSet(){
 
 function isCookieIdSet(){
     $cookie = isCookieSet();
-    
+
     if (!isset($_COOKIE['id']) or empty($_COOKIE['id']) or !$cookie){
         return false;
     }

@@ -52,14 +52,14 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $activate_link = 'http://localhost/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
             $message = '<p>Please click the following link to activate your account: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
             mail($_POST['email'], $subject, $message, $headers);
-			header('location: new_dashboard_user.php');
+			header('location: dashboard_user.php');
 			$id = mysqli_query($con, "SELECT LAST_INSERT_ID() as id")->fetch_all(MYSQLI_ASSOC)[0]["id"];
 			setcookie("id", $id, time() + 3600, "/");
     } else {
 	    // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	    echo 'Could not prepare statement!';
 }
-        
+
 	}
 	$stmt->close();
 } else {

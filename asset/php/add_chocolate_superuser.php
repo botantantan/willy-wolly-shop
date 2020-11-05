@@ -1,15 +1,15 @@
 <!DOCTYPE html>
     <head>
         <title>Add New Chocolate</title>
-        <link rel="stylesheet" href="asset/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
          <script src="https://kit.fontawesome.com/43978b739a.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <nav class="navtop">
 			<div>
-                <a href=""><i class="fas fa-home"></i>Home</a>
-                <a href="#"><i class="fas fa-plus"></i>Add</a>
+                <a href="dashboard_superuser.php"><i class="fas fa-home"></i>Home</a>
+                <a href="add_chocolate_superuser.php"><i class="fas fa-plus"></i>Add</a>
                 <div class="navtop-middle">
                     <div class="container">
                         <i class="fas fa-search"></i>
@@ -26,7 +26,7 @@
         <div class="content">
             <h2>Add New Chocolate</h2>
             <div class="content-form">
-                <form action="" method="post">
+                <form action="addChoco.php" method="post">
                     <div class="row">
                         <div class="col-25">
                             <label for="product-name">Name</label>

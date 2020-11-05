@@ -1,6 +1,12 @@
 <?php
   include "connection.php";
   $conn = OpenCon();
+  $role = $_COOKIE["role"];
+  if ($role == 0){
+    $dashboard = "dashboard_user.php";
+  }else{
+    $dashboard = "dashboard_superuser.php";
+  }
  ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -13,8 +19,8 @@
    <body>
      <nav class="navtop">
          <div>
-             <a href="dashboard.html"><i class="fas fa-home"></i>Home</a>
-             <a href="#"><i class="fas fa-plus"></i>Add</a>
+             <a href="<?= $dashboard; ?>"><i class="fas fa-home"></i>Home</a>
+             <a href="add_chocolate_speruser.php"><i class="fas fa-plus"></i>Add</a>
              <div class="navtop-middle">
                  <div class="container">
                      <i class="fas fa-search"></i>
@@ -24,14 +30,13 @@
                  </div>
              </div>
              <div class="navtop-right">
-                 <a href="#" onclick="logout();" ><i class="fas fa-sign-out-alt"></i>Logout</a>
+                 <a href="logout.php" ><i class="fas fa-sign-out-alt"></i>Logout</a>
              </div>
          </div>
       </nav>
 
       <?php
         $keyword = $_POST["search-box"];
-        $role = $_COOKIE["role"];
         $sql = "
           select * from chocolate where name like '%$keyword%' or description like '%$keyword%'
         ";

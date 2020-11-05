@@ -1,3 +1,4 @@
+
 <?php
   include "connection.php";
   $conn = OpenCon();
@@ -13,26 +14,26 @@
      <body>
          <nav class="navtop">
  			       <div>
-                 <a href="dashboard.html"><i class="fas fa-home"></i>Home</a>
-                 <a href="history.html"><i class="fas fa-bars"></i>History</a>
+                 <a href="dashboard_user.php"><i class="fas fa-home"></i>Home</a>
+                 <a href="history.php"><i class="fas fa-bars"></i>History</a>
                  <div class="navtop-middle">
                      <div class="container">
                          <i class="fas fa-search"></i>
-                         <form class="search" action="index.html" method="post">
+                         <form class="search" action="search.php" method="post">
                              <input type="search" id="search" placeholder="Search..." name="search-box">
                          </form>
                      </div>
                  </div>
                  <div class="navtop-right">
-                     <a href="#" onclick="logout();"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                     <a href="logout.php" ><i class="fas fa-sign-out-alt"></i>Logout</a>
                  </div>
              </div>
            </nav>
            <?php
-             // $id_user = $_COOKIE["cookie_id_user"];
-             $id_user = 1;
-             $sqlNama = "SELECT name from accounts where id = $id_user";
-             $hasilNama = $conn -> query($sqlNama);
+             $id_user = $_COOKIE["id"];
+            //  $id_user = 1;
+             $sqlNama = "SELECT * from accounts where id = $id_user";
+             $hasilNama = ($conn -> query($sqlNama))->fetch_assoc();
 
              $sqlProducts =
              "
@@ -46,7 +47,7 @@
             <div class="content">
              <div class="content-top">
                  <p>
-                 Hello, <?php echo "$hasilNama"; ?>
+                 Hello, <?= $hasilNama["username"]; ?>
                  <a href="#">View all chocolate</a>
                  </p>
              </div>
@@ -61,8 +62,8 @@
                  }
                  echo "
                  <div class='product-box'>
-                     <p><a href='#'><img class='box' src=".$row["location"]." alt=''></a></p>
-                     <a href='#' class='product-name'>".$row["name"]."</a>
+                     <p><a href='buy_user.php?id=".$row["id"]."'><img class='box' src=".$row["location"]." alt=''></a></p>
+                     <a href='buy_user.php?id=".$row["id"]."' class='product-name'>".$row["name"]."</a>
                      <p class='product-amount'>Amount sold: ".$row["sold"]."</p>
                      <p class='product-price'>Rp".$row["price"]."</p>
                  </div>
